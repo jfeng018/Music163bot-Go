@@ -187,10 +187,10 @@ func Start(conf map[string]string) (actionCode int) {
 						return 2
 					}
 				}
-			} else if strings.Contains(update.Message.Text, "music.163.com") || strings.Contains(update.Message.Text, "163cn.tv") {
+			} else if strings.Contains(update.Message.Text, "music.163.com") || strings.Contains(update.Message.Text, "163cn.tv") || strings.Contains(update.Message.Text, "163cn.link") {
 				go func() {
 					var text = update.Message.Text
-					if strings.Contains(update.Message.Text, "163cn.tv") {
+					if strings.Contains(update.Message.Text, "163cn.tv") || strings.Contains(update.Message.Text, "163cn.link") {
 						text = getRedirectUrl(text)
 					}
 					id := parseMusicID(text)
